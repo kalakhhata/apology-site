@@ -18,7 +18,13 @@ heartBlast();
 function goFinal() {
   window.location.href = "final.html";
 }
-function startLove() {
-  document.getElementById("bgMusic").play();
-  window.location.href = "final.html";
+function startMusicAndGo() {
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.7;
+  music.play().then(() => {
+    window.location.href = "final.html";
+  }).catch(err => {
+    console.log("Music play blocked:", err);
+    window.location.href = "final.html";
+  });
 }
