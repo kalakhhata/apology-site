@@ -17,6 +17,7 @@
       font-family: 'Poppins', sans-serif;
       padding: 10px;
       text-align: center;
+      transition: background 2s ease-in-out; /* Smooth background change */
     }
 
     .container {
@@ -106,9 +107,12 @@
     const btn = document.getElementById("loveBtn");
 
     btn.addEventListener("click", () => {
-      audio.play();             // Play music
-      btn.disabled = true;      // Prevent multiple clicks
+      audio.play();             
+      btn.disabled = true;      
       btn.innerText = "Playing 🎵";
+
+      // Animate background gradient change
+      document.body.style.background = "linear-gradient(135deg, #fcd3f6, #c1e1f4)"; 
 
       // Start infinite emoji flood
       startEmojiFlood();
