@@ -6,9 +6,11 @@ Please forgive me 🥺`;
 
 let index = 0;
 const speed = 50;
-const element = document.getElementById("typeText");
 
 function typeEffect() {
+  const element = document.getElementById("typeText");
+  if (!element) return; // safety check
+
   if (index < text.length) {
     element.innerHTML += text.charAt(index);
     index++;
@@ -16,8 +18,10 @@ function typeEffect() {
   }
 }
 
-typeEffect();
+// Start typing when page loads
+window.addEventListener("DOMContentLoaded", typeEffect);
 
+// Redirect to surprise page
 function goSurprise() {
   window.location.href = "surprise.html";
 }
