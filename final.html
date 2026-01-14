@@ -77,6 +77,7 @@
       Thank you for forgiving me ❤️<br>
       Ave unblock kar ne reply aap chal jaldi.<br><br>
       plzzzz........
+      Mani gai hoi to please click yes!
     </p>
 
     <button id="loveBtn">YES 💕</button>
@@ -88,11 +89,12 @@
 
     btn.addEventListener("click", () => {
       audio.play();         // Play music
-      btn.disabled = true;  // Disable button
+      btn.disabled = true;
       btn.innerText = "Playing 🎵";
 
       // Start infinite emoji flood
       startEmojiFlood();
+
       alert("I LOVE YOU 😘");
     });
 
@@ -105,7 +107,7 @@
         emoji.style.fontSize = Math.random() * 50 + 20 + "px";
         document.body.appendChild(emoji);
 
-        setTimeout(() => emoji.remove(), 5000); // remove after animation
+        setTimeout(() => emoji.remove(), 5000);
       }, 150); // new emoji every 150ms
     }
   </script>
