@@ -1,28 +1,16 @@
-const audio = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-const nextBtn = document.getElementById("nextBtn");
+function startMusicAndGo() {
+  const audio = document.getElementById("bgMusic");
+  audio.play();           // Start the music
+  audio.loop = true;      // Loop continuously
 
-// Play / Pause Music Button
-musicBtn.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
-    musicBtn.innerText = "Pause Music ⏸️";
-  } else {
-    audio.pause();
-    musicBtn.innerText = "Play Music 🎵";
-  }
-});
+  // Optional: change button text
+  const btn = document.querySelector("button");
+  btn.innerText = "Playing 🎵";
+  btn.disabled = true;
 
-// Go to final page (or trigger final animations)
-nextBtn.addEventListener("click", () => {
-  // Optional: add hearts explosion before redirect
+  // Trigger heart explosion animation
   finalHeartBlast();
-
-  // Redirect to final page after short delay
-  setTimeout(() => {
-    window.location.href = "final.html"; // replace with your final page
-  }, 1000); // 1 second delay
-});
+}
 
 // Heart explosion animation
 function finalHeartBlast() {
