@@ -5,7 +5,7 @@ function goToFinal() {
   // Redirect to final page after a short delay (1 second)
   setTimeout(() => {
     window.location.href = "final.html"; // replace with your final page filename
-  }, 1000);
+  }, 5000);
 }
 
 // Heart explosion animation
