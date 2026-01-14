@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>You Mean Everything ❤️</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       overflow: hidden;
@@ -14,19 +15,24 @@
       height: 100vh;
       color: white;
       font-family: 'Poppins', sans-serif;
+      padding: 10px;
+      text-align: center;
     }
 
     .container {
       text-align: center;
-      padding: 30px;
+      padding: 25px;
       background: rgba(255, 255, 255, 0.2);
       border-radius: 25px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      max-width: 90%;
+      margin: 0 auto;
     }
 
     h1.pulse {
       font-size: 3rem;
       animation: pulse 1.2s infinite alternate;
+      margin-bottom: 15px;
     }
 
     @keyframes pulse {
@@ -53,14 +59,26 @@
 
     .emoji {
       position: absolute;
-      font-size: 25px;
-      animation: float 5s linear forwards;
       pointer-events: none;
+      animation: float 5s linear forwards;
     }
 
     @keyframes float {
       from { transform: translateY(0); opacity: 1; }
       to { transform: translateY(-600px); opacity: 0; }
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 480px) {
+      h1.pulse { font-size: 2rem; }
+      button { padding: 10px 20px; font-size: 0.95rem; }
+      .emoji { font-size: 18px; }
+    }
+
+    @media (max-width: 360px) {
+      h1.pulse { font-size: 1.8rem; }
+      button { padding: 8px 16px; font-size: 0.9rem; }
+      .emoji { font-size: 16px; }
     }
   </style>
 </head>
@@ -76,8 +94,8 @@
     <p class="message">
       Thank you for forgiving me ❤️<br>
       Ave unblock kar ne reply aap chal jaldi.<br><br>
-      plzzzz........
-      Mani gai hoi to please click yes!
+      plzzzz........<br>
+      Mani gai hoi to please click YES!
     </p>
 
     <button id="loveBtn">YES 💕</button>
@@ -88,8 +106,8 @@
     const btn = document.getElementById("loveBtn");
 
     btn.addEventListener("click", () => {
-      audio.play();         // Play music
-      btn.disabled = true;
+      audio.play();             // Play music
+      btn.disabled = true;      // Prevent multiple clicks
       btn.innerText = "Playing 🎵";
 
       // Start infinite emoji flood
