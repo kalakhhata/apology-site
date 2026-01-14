@@ -1,15 +1,11 @@
-function startMusicAndGo() {
-  const audio = document.getElementById("bgMusic");
-  audio.play();           // Start the music
-  audio.loop = true;      // Loop continuously
-
-  // Optional: change button text
-  const btn = document.querySelector("button");
-  btn.innerText = "Playing 🎵";
-  btn.disabled = true;
-
-  // Trigger heart explosion animation
+function goToFinal() {
+  // Trigger heart explosion animation before redirect
   finalHeartBlast();
+
+  // Redirect to final page after a short delay (1 second)
+  setTimeout(() => {
+    window.location.href = "final.html"; // replace with your final page filename
+  }, 1000);
 }
 
 // Heart explosion animation
